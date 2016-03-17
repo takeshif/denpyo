@@ -103,9 +103,9 @@ ul {
   list-style: none;
 }
 
-.komoku {
+li span {
   font-size: 12px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .hensyu {

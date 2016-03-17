@@ -60,9 +60,9 @@
     <hr>
     <div class="denpyo">
       <ul>
-        <li class="komoku">
-          <span class="komoku">承認者</span>
-          <span class="komoku">記入者</span>
+        <li id="denpyo_1" data_id="denpyo_1">
+          <span class="komoku">担当者</span>
+          <span class="komoku">伝票日付</span>
           <span class="komoku">お店コード</span>
           <span class="komoku">お店名</span>
           <span class="komoku">取引先コード</span>
@@ -76,6 +76,23 @@
           <span class="hensyu">編集</span>
           <span class="delete">x</span>
         </li>
+        <li id="denpyo_2" data_id="denpyo_2">
+          <span class="komoku">担当者</span>
+          <span class="komoku">伝票日付</span>
+          <span class="komoku">お店コード</span>
+          <span class="komoku">お店名</span>
+          <span class="komoku">取引先コード</span>
+          <span class="komoku">取引先名</span>
+          <span class="komoku">商品コード</span>
+          <span class="komoku">商品名</span>
+          <span class="komoku">上代</span>
+          <span class="komoku">下代</span>
+          <span class="komoku">仕入</span>
+          <span class="komoku">リース利用しない</span>
+          <span class="hensyu">編集</span>
+          <span class="delete">x</span>
+        </li>
+
         </ul>
       </div>
       <div>
