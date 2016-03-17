@@ -27,6 +27,12 @@ input#tanto {
   margin-bottom: 20px;
 }
 
+input#ymd {
+  width: 80px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
 input#omise_cd {
   width: 80px;
   height: 20px;
@@ -57,8 +63,8 @@ input#sir_cd {
 }
 
 #go {
-  width: 100px;
-  height: 30px;
+  width: 120px;
+  height: 35px;
   margin-top: 30px;
   margin-bottom: 30px;
   border-radius: 5px;

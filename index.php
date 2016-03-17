@@ -13,8 +13,14 @@
   <div id="container">
     <h1>工事代入力</h1>
     <form method="post" action="" id="new_denpyo_form">
+      <div>
       <label for="tanto" class="lbl">担当者：</label>
       <input type="text" name="tanto" id="tanto" placeholder="担当者">
+     </div>
+     <div>
+       <label for="ymd" class="lbl">伝票日付：</label>
+       <input type="text" name="ymd" id="ymd" placeholder="伝票日付">
+      </div>
       <div id="head1">
         <label for="omise_cd" class="lbl">お店コード：</label>
         <input type="text" name="omise_cd" id="omise_cd" maxlength="5" placeholder="お店コード">
