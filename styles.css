@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#container {
+  width: 1000px;
+  margin: 15px auto;
+}
+
+.lbl {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#omise_name {
+  margin-right: 45px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+input#tanto {
+  width: 80px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+input#omise_cd {
+  width: 80px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+input#sir_cd {
+  width: 80px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+#head1 {
+  margin-bottom: 10px;
+}
+
+.lease {
+  margin-top: 20px;
+}
+
+#headergo {
+  width: 70px;
+  height: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#go {
+  width: 100px;
+  height: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background-color: blue;
+  color: #ccc;
+  cursor: pointer;
+}
+
+
+.meisai {
+  margin-top: 20px;
+}
+
+#jyodai {
+  width: 80px;
+  height: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#gedai {
+  width: 80px;
+  height: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+
+}
+
+#siire {
+  width: 80px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.komoku {
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.hensyu {
+  margin-left: 30px;
+  color: blue;
+  cursor: pointer;
+}
+
+.delete {
+  margin-left: 10px;
+  color: red;
+  cursor: pointer;
+}
