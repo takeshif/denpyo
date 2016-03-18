@@ -11,21 +11,21 @@ class Denpyo {
     try {
       $this->_db = new \PDO(DSN, DB_USERNAME, DB_PASSWORD);
       $this->_db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-    } catch (|PDOException $e) {
+    } catch (\PDOException $e) {
       echo $e->getMessage();
       exit;
     }
   }
 
-  private funciton _createToken() {
+  private function _createToken() {
     if (!isset($_SESSION['token'])) {
       $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(16));
     }
   }
 
   public function getAll() {
-    $stmt = $this->_db->qeury("select * from denpyo order by id desc");
-    return $stmt->fetchAll(|PDO::FETCH_OBJ);
+    $stmt = $this->_db->query("select * from denpyo order by id desc");
+    return $stmt->fetchAll(\PDO::FETCH_OBJ);
   }
 
   public function post() {
@@ -77,7 +77,7 @@ class Denpyo {
       ];
     }
 
-    private funciton _create() {
+    private function _create() {
       if (!isset($_POST['title']) || $_POST['title'] === '') {
         throw new \Exception('[create] title not set!');
       }
@@ -87,7 +87,7 @@ class Denpyo {
       $stmt->execute([':title' => $_POST['title']]);
 
       return [
-        'id' => $this->_db->lastInsertId();
+        'id' => $this->_db->lastInsertId()
       ];
     }
 

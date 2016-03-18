@@ -6,11 +6,13 @@
   require_once(__DIR__ . '/function.php');
   require_once(__DIR__ . '/Denpyo.php');
 
+  $denpyoApp = new \MyApp\Denpyo();
+  $denpyoes = $denpyoApp->getAll();
+
   if ($_POST['headgo'] === 'headergo') {
     // echo "ヘッダー登録を押しました";
-    $denpyoApp = new \MyApp\Denpyo();
-    $denpyoes = $denpyoApp->getAll();
-
+    // $denpyoApp = new \MyApp\Denpyo();
+    // $denpyoes = $denpyoApp->getAll();
   } elseif ($_POST['go'] === 'go') {
     // echo "伝票発行を押しました";
   }
@@ -75,7 +77,26 @@
     <hr>
     <div class="denpyo">
       <ul>
-        <li id="denpyo_1" data_id="denpyo_1">
+        <?php foreach ($denpyoes as $denpyo) : ?>
+        <li id="denpyo_<?= h($denpyo->id); ?>" data_id="denpyo_<?= h($denpyo->id); ?>">
+          <span class="komoku"><?= h($denpyo->tanto); ?></span>
+          <span class="komoku"><?= h($denpyo->yyyymmdd); ?></span>
+          <span class="komoku"><?= h($denpyo->omise_cd); ?></span>
+          <span class="komoku">お店名</span>
+          <span class="komoku"><?= h($denpyo->sir_cd); ?></span>
+          <span class="komoku">取引先名</span>
+          <span class="komoku"><?= h($denpyo->item_cd); ?></span>
+          <span class="komoku">商品名</span>
+          <span class="komoku"><?= h($denpyo->jtanka); ?></span>
+          <span class="komoku"><?= h($denpyo->gtanka); ?></span>
+          <span class="komoku"><?= h($denpyo->stanka); ?></span>
+          <span class="komoku">リース利用しない</span>
+          <span class="hensyu">編集</span>
+          <span class="delete">x</span>
+        </li>
+      <?php endforeach; ?>
+
+        <!-- <li id="denpyo_1" data_id="denpyo_1">
           <span class="komoku">担当者</span>
           <span class="komoku">伝票日付</span>
           <span class="komoku">お店コード</span>
@@ -90,8 +111,8 @@
           <span class="komoku">リース利用しない</span>
           <span class="hensyu">編集</span>
           <span class="delete">x</span>
-        </li>
-        <li id="denpyo_2" data_id="denpyo_2">
+        </li> -->
+        <!-- <li id="denpyo_2" data_id="denpyo_2">
           <span class="komoku">担当者</span>
           <span class="komoku">伝票日付</span>
           <span class="komoku">お店コード</span>
@@ -106,7 +127,7 @@
           <span class="komoku">リース利用しない</span>
           <span class="hensyu">編集</span>
           <span class="delete">x</span>
-        </li>
+        </li> -->
 
         </ul>
       </div>
