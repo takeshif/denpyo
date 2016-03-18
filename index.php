@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>My Todos</title>
+  <title>工事伝票入力</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
