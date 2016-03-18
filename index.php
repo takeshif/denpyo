@@ -1,5 +1,10 @@
 <?php
-  echo $_POST['omise_cd'];
+  if ($_POST['headgo'] === 'headergo') {
+    // echo "ヘッダー登録を押しました";
+  } elseif ($_POST['go'] === 'go') {
+    // echo "伝票発行を押しました";
+  }
+  // echo $_POST['omise_cd'];
 
 ?>
 <!DOCTYPE html>
@@ -56,7 +61,7 @@
       <div>
         <button type="submit" name="headgo" id="headergo" value="headergo">登録</button>
       </div>
-    </form>
+    <!-- </form> -->
     <hr>
     <div class="denpyo">
       <ul>
@@ -98,5 +103,6 @@
       <div>
         <button type="submit" name="go" id="go" value="go">伝票依頼書発行</button>
       </div>
+    </form>
   </body>
   </html>
