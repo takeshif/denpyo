@@ -7,7 +7,8 @@ create table denpyo (
   jtanka int,
   gtanka int,
   stanka int,
-  lease tinyint
+  lease tinyint,
+  status tinyint
 );
 
 create table imtok (
