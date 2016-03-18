@@ -1,6 +1,16 @@
 <?php
+
+  session_start();
+
+  require_once(__DIR__ . '/config.php');
+  require_once(__DIR__ . '/function.php');
+  require_once(__DIR__ . '/Denpyo.php');
+
   if ($_POST['headgo'] === 'headergo') {
     // echo "ヘッダー登録を押しました";
+    $denpyoApp = new \MyApp\Denpyo();
+    $denpyoes = $denpyoApp->getAll();
+
   } elseif ($_POST['go'] === 'go') {
     // echo "伝票発行を押しました";
   }
