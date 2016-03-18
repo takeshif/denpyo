@@ -54,7 +54,7 @@
         <input type="radio" name="option" value="リース利用する" checked>リース利用する
       </span>
       <div>
-        <button type="submit" name="headgo" id="headergo" value="ヘッダ確定">登録</button>
+        <button type="submit" name="headgo" id="headergo" value="headergo">登録</button>
       </div>
     </form>
     <hr>
@@ -96,7 +96,7 @@
         </ul>
       </div>
       <div>
-        <button type="submit" name="go" id="go">伝票依頼書発行</button>
+        <button type="submit" name="go" id="go" value="go">伝票依頼書発行</button>
       </div>
   </body>
   </html>
