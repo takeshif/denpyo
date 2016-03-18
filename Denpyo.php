@@ -28,6 +28,24 @@ class Denpyo {
     return $stmt->fetchAll(\PDO::FETCH_OBJ);
   }
 
+  public function getOmiseName($omise_cd) {
+    $sql = sprintf("select omise_name from imtok where omise_cd = %d", $omise_cd);
+    $stmt = $this->_db->query($sql);
+    return $stmt->fetchAll(\PDO::FETCH_OBJ);
+  }
+
+  public function getSirName($sir_cd) {
+    $sql = sprintf("select sir_name from imsir where sir_cd = %d", $sir_cd);
+    $stmt = $this->_db->query($sql);
+    return $stmt->fetchAll(\PDO::FETCH_OBJ);
+  }
+
+  public function getItemName($item_cd) {
+    $sql = sprintf("select item_name from imsho where item_cd = %s", $item_cd);
+    $stmt = $this->_db->query($sql);
+    return $stmt->fetchAll(\PDO::FETCH_OBJ);
+  }
+
   public function post() {
     $this->validateToken();
 

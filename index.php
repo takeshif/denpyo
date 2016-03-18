@@ -82,11 +82,11 @@
           <span class="komoku"><?= h($denpyo->tanto); ?></span>
           <span class="komoku"><?= h($denpyo->yyyymmdd); ?></span>
           <span class="komoku"><?= h($denpyo->omise_cd); ?></span>
-          <span class="komoku">お店名</span>
+          <span class="komoku"><?php $imtok = $denpyoApp->getOmiseName($denpyo->omise_cd); echo h($imtok[0]->omise_name); ?></span>
           <span class="komoku"><?= h($denpyo->sir_cd); ?></span>
-          <span class="komoku">取引先名</span>
+          <span class="komoku"><?php $imsir = $denpyoApp->getSirName($denpyo->sir_cd); echo h($imsir[0]->sir_name); ?></span>
           <span class="komoku"><?= h($denpyo->item_cd); ?></span>
-          <span class="komoku">商品名</span>
+          <span class="komoku"><?php $imsho = $denpyoApp->getItemName($denpyo->item_cd); echo h($imsho[0]->item_name); ?></span>
           <span class="komoku"><?= h($denpyo->jtanka); ?></span>
           <span class="komoku"><?= h($denpyo->gtanka); ?></span>
           <span class="komoku"><?= h($denpyo->stanka); ?></span>
