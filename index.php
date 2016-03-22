@@ -94,46 +94,15 @@
           <span class="hensyu">編集</span>
           <span class="delete">x</span>
         </li>
-      <?php endforeach; ?>
-
-        <!-- <li id="denpyo_1" data_id="denpyo_1">
-          <span class="komoku">担当者</span>
-          <span class="komoku">伝票日付</span>
-          <span class="komoku">お店コード</span>
-          <span class="komoku">お店名</span>
-          <span class="komoku">取引先コード</span>
-          <span class="komoku">取引先名</span>
-          <span class="komoku">商品コード</span>
-          <span class="komoku">商品名</span>
-          <span class="komoku">上代</span>
-          <span class="komoku">下代</span>
-          <span class="komoku">仕入</span>
-          <span class="komoku">リース利用しない</span>
-          <span class="hensyu">編集</span>
-          <span class="delete">x</span>
-        </li> -->
-        <!-- <li id="denpyo_2" data_id="denpyo_2">
-          <span class="komoku">担当者</span>
-          <span class="komoku">伝票日付</span>
-          <span class="komoku">お店コード</span>
-          <span class="komoku">お店名</span>
-          <span class="komoku">取引先コード</span>
-          <span class="komoku">取引先名</span>
-          <span class="komoku">商品コード</span>
-          <span class="komoku">商品名</span>
-          <span class="komoku">上代</span>
-          <span class="komoku">下代</span>
-          <span class="komoku">仕入</span>
-          <span class="komoku">リース利用しない</span>
-          <span class="hensyu">編集</span>
-          <span class="delete">x</span>
-        </li> -->
-
+        <?php endforeach; ?>
         </ul>
       </div>
       <div>
         <button type="submit" name="go" id="go" value="go">伝票依頼書発行</button>
       </div>
     </form>
+    <input type="hidden" id="token" value="<?= h($_SESSION['token']); ?>">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="denpyo.js"</script>
   </body>
   </html>
