@@ -1,10 +1,10 @@
 $(function() {
   'use strict';
-
+  
   $('#tanto').focus();
 
   // update
-  $('#denpyos').on('click', '.hensyu', fucntion() {
+  $('#denpyos').on('click', '.hensyu', function() {
     // idを取得
     var id = $(this).parents('li').data('id');
     // ajax処理
@@ -38,7 +38,7 @@ $(function() {
   });
 
   // create
-  $('#new_todo_form').on('submit', fucntion() {
+  $('#new_todo_form').on('submit', function() {
     // titleを取得
     var title = $('#new_todo').val();
     // ajax処理
