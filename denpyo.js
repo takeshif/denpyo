@@ -3,21 +3,51 @@ $(function() {
   
   $('#tanto').focus();
 
-  // update
+  // set
   $('#denpyos').on('click', '.hensyu', function() {
     // idを取得
-    var id = $(this).parents('li').data('id');
+    var id = $('li').data('id');
     // ajax処理
     $.post('_ajax.php', {
       id: id,
+      mode: 'set',
+      token: $('#token').val()
+    }, function() {
+      $('#tanto').val($('#tanto_' + id).text());
+      $('#ymd').val($('#yyyymmdd_' + id).text());
+      $('#omise_cd').val($('#omise_' + id).text());
+      $('#omise_name').val($('#omiseName_' + id).text());
+      $('#sir_cd').val($('#sir_' + id).text());
+      $('#sir_name').val($('#sirName_' + id).text());
+      $('select[name="item_cd"]').val($('#itemcd_' + id).text());
+      $('#jyodai').val($('#jtanka_' + id).text());
+      $('#gedai').val($('#gtanka_' + id).text());
+      $('#siire').val($('#stanka_' + id).text());
+      $(':radio[name="lease"]').val($('#lease_' + id).text());
+    })
+  });
+  
+  // update
+  $('#headergo').on('click', function() {
+
+    // idを取得
+    var id = $('li').data('id');
+
+    // ajax処理
+    $.post('_ajax.php', {
+      id: id,
+      tanto: $(':text[name="tanto"]').val(),
+      ymd: $(':text[name="ymd"]').val(),
+      omise_cd: $(':text[name="omise_cd"]').val(),
+      sir_cd: $(':text[name="sir_cd"]').val(),
+      item_cd: $('select[name="item_cd"]').val(),
+      jyodai: $(':text[name="jyodai"]').val(),
+      gedai: $(':text[name="gedai"]').val(),
+      siire: $(':text[name="siire"]').val(),
+      lease: $('select[name="lease"]').val(),
       mode: 'update',
       token: $('#token').val()
     }, function(res) {
-      if (res.state === '1') {
-        $('#todo_' + id).find('.todo_title').addClass('done');
-      } else {
-        $('#todo_' + id).find('.todo_title').removeClass('done');
-      }
     })
   });
 

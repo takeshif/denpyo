@@ -47,13 +47,15 @@ class Denpyo {
   }
 
   public function post() {
-    $this->validateToken();
+    $this->_validateToken();
 
     if (!isset($_POST['mode'])) {
       throw new \Exception('mode not set!');
     }
 
     switch ($_POST['mode']) {
+      case 'set':
+        return $this->_set();
       case 'update':
         return $this->_update();
       case 'create':
@@ -73,27 +75,36 @@ class Denpyo {
        }
     }
 
-    private function _update() {
+    private function _set() {
       if (!isset($_POST['id'])) {
         throw new \Exception('[update] id not set!');
       }
 
-      $this->_db->beginTranction();
+    }
+    
+    private function _update() {
+      if (!isset($_POST['id'])) {
+        throw new \Exception('[update] id not set!');
+      }
+      
+      $this->_db->beginTransaction();
 
-      $sql = sprintf("update denpyo set state = (state + 1) %% 2 where id = %d", $_POST['id']);
+      $sql = sprintf("update denpyo set tanto = '%s', yyyymmdd = %d,
+                      omise_cd = %d, sir_cd = %d, item_cd = '%s', 
+                      jtanka = %d, gtanka = %d , stanka = %d, 
+                      lease = %d, status = %d 
+                      where id = %d", $_POST['tanto'],$_POST['ymd'],$_POST['omise_cd'],$_POST['sir_cd'],
+                      $_POST['item_cd'],$_POST['jyodai'],$_POST['gedai'],$_POST['siire'],
+                      $_POST['lease'], $_POST['status'],$_POST['id']);
+
       $stmt = $this->_db->prepare($sql);
       $stmt->execute();
 
-      $sql = sprintf("select state from todos where id = %d", $_POST['id']);
-      $stmt = $this->_db->query($sql);
-      $state = $stmt->fetchColumn();
-
       $this->_db->commit();
 
-      return [
-        'state' => $state
-      ];
+      return [];
     }
+
 
     private function _create() {
       if (!isset($_POST['title']) || $_POST['title'] === '') {

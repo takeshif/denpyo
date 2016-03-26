@@ -1,5 +1,6 @@
 create table denpyo (
   id int not null auto_increment primary key,
+  tanto text,
   yyyymmdd int not null,
   omise_cd int not null,
   sir_cd int not null,

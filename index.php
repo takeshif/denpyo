@@ -59,38 +59,39 @@
       </div>
       <div class="meisai">
         <label for="jyodai" class="lbl">上代：</label>
-        <input type="text" id="jyodai" maxlenth="6" placeholder="上代単価">
+        <input type="text" name="jyodai" id="jyodai" maxlenth="6" placeholder="上代単価">
         <label for="gedai" class="lbl">下代：</label>
-        <input type="text" id="gedai" maxlenth="6" placeholder="下代単価">
+        <input type="text" name="gedai" id="gedai" maxlenth="6" placeholder="下代単価">
         <label for="siire" class="lbl">仕入：</label>
-        <input type="text" id="siire" maxlenth="6" placeholder="仕入単価">
+        <input type="text" name="siire" id="siire" maxlenth="6" placeholder="仕入単価">
 
       </div>
       <span class="lease">
-        <input type="radio" name="option" value="リース利用しない" checked>リース利用しない
-        <input type="radio" name="option" value="リース利用する" checked>リース利用する
+        <input type="radio" name="option" value="リース利用しない">リース利用しない
+        <input type="radio" name="option" value="リース利用する">リース利用する
       </span>
       <div>
-        <button type="submit" name="headgo" id="headergo" value="headergo">登録</button>
+        <!-- <button type="submit" name="headgo" id="headergo" value="headergo">登録</button> -->
+        <input type="button" name="headgo" id="headergo" value="登録">
       </div>
     <!-- </form> -->
     <hr>
     <div class="denpyo">
-      <ul>
+      <ul id="denpyos">
         <?php foreach ($denpyoes as $denpyo) : ?>
-        <li id="denpyo_<?= h($denpyo->id); ?>" data_id="denpyo_<?= h($denpyo->id); ?>">
-          <span class="komoku"><?= h($denpyo->tanto); ?></span>
-          <span class="komoku"><?= h($denpyo->yyyymmdd); ?></span>
-          <span class="komoku"><?= h($denpyo->omise_cd); ?></span>
-          <span class="komoku"><?php $imtok = $denpyoApp->getOmiseName($denpyo->omise_cd); echo h($imtok[0]->omise_name); ?></span>
-          <span class="komoku"><?= h($denpyo->sir_cd); ?></span>
-          <span class="komoku"><?php $imsir = $denpyoApp->getSirName($denpyo->sir_cd); echo h($imsir[0]->sir_name); ?></span>
-          <span class="komoku"><?= h($denpyo->item_cd); ?></span>
-          <span class="komoku"><?php $imsho = $denpyoApp->getItemName($denpyo->item_cd); echo h($imsho[0]->item_name); ?></span>
-          <span class="komoku"><?= h($denpyo->jtanka); ?></span>
-          <span class="komoku"><?= h($denpyo->gtanka); ?></span>
-          <span class="komoku"><?= h($denpyo->stanka); ?></span>
-          <span class="komoku">リース利用しない</span>
+        <li id="denpyo_<?= h($denpyo->id); ?>" data-id="<?= h($denpyo->id); ?>">
+          <span class="komoku" id="tanto_<?= h($denpyo->id); ?>"><?= h($denpyo->tanto); ?></span>
+          <span class="komoku" id="yyyymmdd_<?= h($denpyo->id); ?>"><?= h($denpyo->yyyymmdd); ?></span>
+          <span class="komoku" id="omise_<?= h($denpyo->id); ?>"><?= h($denpyo->omise_cd); ?></span>
+          <span class="komoku" id="omiseName_<?= h($denpyo->id); ?>"><?php $imtok = $denpyoApp->getOmiseName($denpyo->omise_cd); echo h($imtok[0]->omise_name); ?></span>
+          <span class="komoku" id="sir_<?= h($denpyo->id); ?>"><?= h($denpyo->sir_cd); ?></span>
+          <span class="komoku" id="sirName_<?= h($denpyo->id); ?>"><?php $imsir = $denpyoApp->getSirName($denpyo->sir_cd); echo h($imsir[0]->sir_name); ?></span>
+          <span class="komoku" id="itemcd_<?= h($denpyo->id); ?>"><?= h($denpyo->item_cd); ?></span>
+          <span class="komoku" id="itemName_<?= h($denpyo->id); ?>"><?php $imsho = $denpyoApp->getItemName($denpyo->item_cd); echo h($imsho[0]->item_name); ?></span>
+          <span class="komoku" id="jtanka_<?= h($denpyo->id); ?>"><?= h($denpyo->jtanka); ?></span>
+          <span class="komoku" id="gtanka_<?= h($denpyo->id); ?>"><?= h($denpyo->gtanka); ?></span>
+          <span class="komoku" id="stanka_<?= h($denpyo->id); ?>"><?= h($denpyo->stanka); ?></span>
+          <span class="komoku" id="lease_<?= h($denpyo->id); ?>">リース利用しない</span>
           <span class="hensyu">編集</span>
           <span class="delete">x</span>
         </li>
