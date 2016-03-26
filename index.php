@@ -30,6 +30,12 @@
   <div id="container">
     <h1>工事代入力</h1>
     <form method="post" action="" id="new_denpyo_form">
+    　<div>
+      <select name="mode" id="mode">
+        <option value="toroku">新規登録</option>
+        <option value="syusei">修正</option>
+      </select>
+      </div>
       <div>
       <label for="tanto" class="lbl">担当者：</label>
       <input type="text" name="tanto" id="tanto" placeholder="担当者">
