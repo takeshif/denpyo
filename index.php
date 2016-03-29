@@ -32,8 +32,8 @@
     <form method="post" action="" id="new_denpyo_form">
     　<div>
       <select name="mode" id="mode">
-        <option value="toroku">新規登録</option>
-        <option value="syusei">修正</option>
+        <option value="create">新規登録</option>
+        <option value="update">修正</option>
       </select>
       </div>
       <div>
@@ -47,7 +47,7 @@
       <div id="head1">
         <label for="omise_cd" class="lbl">お店コード：</label>
         <input type="text" name="omise_cd" id="omise_cd" maxlength="5" placeholder="お店コード">
-        <span id="omise_name">エビスタ西宮</span>
+        <span id="omise_name"></span>
         <label for="sir_cd" class="lbl">取引先コード：</label>
         <input type="text" name="sir_cd" id="sir_cd" maxlength="5" placeholder="取引先コード">
         <span id="sir_name">取引ああああああああああああ</span>

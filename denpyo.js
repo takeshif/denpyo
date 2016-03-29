@@ -2,11 +2,27 @@ $(function() {
   'use strict';
   
   $('#tanto').focus();
+  
+  // omise_name set after omise_cd set 
+  $('#omise_cd').change(function() {
+     $.post('_ajax.php', {
+      omise_cd: $(this).val(),
+      mode: 'omise_name_set',
+      token: $('#token').val()
+    }, function(res) {
+        $('#omise_name').text(res)
+    })
+  });
 
   // set
   $('#denpyos').on('click', '.hensyu', function() {
+    
     // idを取得
-    var id = $('li').data('id');
+    var id = $(this).parent('li').data('id');
+    
+    // モードを修正にセットする
+    $('#mode').val('update');
+    
     // ajax処理
     $.post('_ajax.php', {
       id: id,
@@ -32,6 +48,16 @@ $(function() {
 
     // idを取得
     var id = $('li').data('id');
+    
+    // リース区分を設定
+    var leaseText = $('select[name="lease"]').val();
+    var lease = 0;
+    if (leaseText = "リース使用する") {
+        lease = 1;
+    }
+    
+    // modeを取得
+    var mode = $('select[name="mode"]').val();
 
     // ajax処理
     $.post('_ajax.php', {
@@ -44,8 +70,9 @@ $(function() {
       jyodai: $(':text[name="jyodai"]').val(),
       gedai: $(':text[name="gedai"]').val(),
       siire: $(':text[name="siire"]').val(),
-      lease: $('select[name="lease"]').val(),
-      mode: 'update',
+      lease: lease,
+      status: 1,
+      mode: mode,
       token: $('#token').val()
     }, function(res) {
     })

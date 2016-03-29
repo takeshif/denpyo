@@ -31,7 +31,8 @@ class Denpyo {
   public function getOmiseName($omise_cd) {
     $sql = sprintf("select omise_name from imtok where omise_cd = %d", $omise_cd);
     $stmt = $this->_db->query($sql);
-    return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    $omise_name = $stmt->fetch();
+    return $omise_name[omise_name];
   }
 
   public function getSirName($sir_cd) {
@@ -62,6 +63,8 @@ class Denpyo {
         return $this->_create();
       case 'delete':
         return $this->_delete();
+      case 'omise_name_set':
+        return $this->getOmiseName($_POST['omise_cd']);
       }
     }
 
@@ -105,20 +108,27 @@ class Denpyo {
       return [];
     }
 
-
     private function _create() {
-      if (!isset($_POST['title']) || $_POST['title'] === '') {
-        throw new \Exception('[create] title not set!');
+      if (!isset($_POST['tanto']) || $_POST['tanto'] === '') {
+        throw new \Exception('[create] tanto not set!');
       }
 
-      $sql = "insert into todos (title) values (:title)";
+      $sql = "insert into denpyo (tanto,yyyymmdd,omise_cd,sir_cd,item_cd,
+              jtanka,gtanka,stanka,lease,status) values 
+              (:tanto,:yyyymmdd,:omise_cd,:sir_cd,:item_cd,
+              :jtanka,:gtanka,:stanka,:lease,:status)";
       $stmt = $this->_db->prepare($sql);
-      $stmt->execute([':title' => $_POST['title']]);
+      $stmt->execute([':tanto' => $_POST['tanto'], ':yyyymmdd' => $_POST['ymd'],
+                     ':omise_cd' => $_POST['omise_cd'], ':sir_cd' => $_POST['sir_cd'],
+                     ':item_cd' => $_POST['item_cd'], ':jtanka' => $_POST['jyodai'],
+                     ':gtanka' => $_POST['gedai'], ':stanka' => $_POST['siire'],
+                     ':lease' => $_POST['lease'], ':status' => $_POST['status']]);
 
       return [
         'id' => $this->_db->lastInsertId()
       ];
     }
+    
 
     private function _delete() {
       if (!isset($_POST['id'])) {
