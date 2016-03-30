@@ -3,6 +3,18 @@ $(function() {
   
   $('#tanto').focus();
   
+  // 単価を３桁区切りのカンマを入れる
+  $('.col9').each(function() {
+    $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+  });
+  $('.col10').each(function() {
+    $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+  });
+  $('.col11').each(function() {
+    $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+  });
+
+  
   // omise_name set after omise_cd set 
   $('#omise_cd').change(function() {
      $.post('_ajax.php', {

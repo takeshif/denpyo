@@ -80,24 +80,25 @@
         <!-- <button type="submit" name="headgo" id="headergo" value="headergo">登録</button> -->
         <input type="button" name="headgo" id="headergo" value="登録">
       </div>
+      </div>
     <!-- </form> -->
     <hr>
     <div class="denpyo">
       <ul id="denpyos">
         <?php foreach ($denpyoes as $denpyo) : ?>
         <li id="denpyo_<?= h($denpyo->id); ?>" data-id="<?= h($denpyo->id); ?>">
-          <span class="komoku" id="tanto_<?= h($denpyo->id); ?>"><?= h($denpyo->tanto); ?></span>
-          <span class="komoku" id="yyyymmdd_<?= h($denpyo->id); ?>"><?= h($denpyo->yyyymmdd); ?></span>
-          <span class="komoku" id="omise_<?= h($denpyo->id); ?>"><?= h($denpyo->omise_cd); ?></span>
-          <span class="komoku" id="omiseName_<?= h($denpyo->id); ?>"><?php $imtok = $denpyoApp->getOmiseName($denpyo->omise_cd); echo h($imtok[0]->omise_name); ?></span>
-          <span class="komoku" id="sir_<?= h($denpyo->id); ?>"><?= h($denpyo->sir_cd); ?></span>
-          <span class="komoku" id="sirName_<?= h($denpyo->id); ?>"><?php $imsir = $denpyoApp->getSirName($denpyo->sir_cd); echo h($imsir[0]->sir_name); ?></span>
-          <span class="komoku" id="itemcd_<?= h($denpyo->id); ?>"><?= h($denpyo->item_cd); ?></span>
-          <span class="komoku" id="itemName_<?= h($denpyo->id); ?>"><?php $imsho = $denpyoApp->getItemName($denpyo->item_cd); echo h($imsho[0]->item_name); ?></span>
-          <span class="komoku" id="jtanka_<?= h($denpyo->id); ?>"><?= h($denpyo->jtanka); ?></span>
-          <span class="komoku" id="gtanka_<?= h($denpyo->id); ?>"><?= h($denpyo->gtanka); ?></span>
-          <span class="komoku" id="stanka_<?= h($denpyo->id); ?>"><?= h($denpyo->stanka); ?></span>
-          <span class="komoku" id="lease_<?= h($denpyo->id); ?>">リース利用しない</span>
+          <span class="komoku col1" id="tanto_<?= h($denpyo->id); ?>"><?= h($denpyo->tanto); ?></span>
+          <span class="komoku col2" id="yyyymmdd_<?= h($denpyo->id); ?>"><?= h($denpyo->yyyymmdd); ?></span>
+          <span class="komoku col3" id="omise_<?= h($denpyo->id); ?>"><?= h($denpyo->omise_cd); ?></span>
+          <span class="komoku col4" id="omiseName_<?= h($denpyo->id); ?>"><?php $imtok = $denpyoApp->getOmiseName($denpyo->omise_cd); echo h($imtok[0]->omise_name); ?></span>
+          <span class="komoku col5" id="sir_<?= h($denpyo->id); ?>"><?= h($denpyo->sir_cd); ?></span>
+          <span class="komoku col6" id="sirName_<?= h($denpyo->id); ?>"><?php $imsir = $denpyoApp->getSirName($denpyo->sir_cd); echo h($imsir[0]->sir_name); ?></span>
+          <span class="komoku col7" id="itemcd_<?= h($denpyo->id); ?>"><?= h($denpyo->item_cd); ?></span>
+          <span class="komoku col8" id="itemName_<?= h($denpyo->id); ?>"><?php $imsho = $denpyoApp->getItemName($denpyo->item_cd); echo h($imsho[0]->item_name); ?></span>
+          <span class="komoku col9" id="jtanka_<?= h($denpyo->id); ?>"><?= h($denpyo->jtanka); ?></span>
+          <span class="komoku col10" id="gtanka_<?= h($denpyo->id); ?>"><?= h($denpyo->gtanka); ?></span>
+          <span class="komoku col11" id="stanka_<?= h($denpyo->id); ?>"><?= h($denpyo->stanka); ?></span>
+          <span class="komoku col12" id="lease_<?= h($denpyo->id); ?>">リース利用しない</span>
           <span class="hensyu">編集</span>
           <span class="delete">x</span>
         </li>
