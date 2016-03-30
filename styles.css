@@ -144,7 +144,7 @@ li span {
 }
 
 .col8 {
-    width: 100px;
+    width: 150px;
 }
 
 .col9 {
@@ -164,6 +164,7 @@ li span {
 
 .col12 {
     width: 100px;
+    text-align: center;
 }
 
 /* .col1,.col2,.col3,.col4,.col5,.col6,.col7,.col8,.col9,.col10,.col11,.col12 {

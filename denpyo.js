@@ -31,6 +31,9 @@ $(function() {
     
     // idを取得
     var id = $(this).parent('li').data('id');
+    var jyodai = $('#jtanka_' + id).text().replace(",","");
+    var gedai = $('#gtanka_' + id).text().replace(",","");
+    var siire = $('#stanka_' + id).text().replace(",","");
     
     // モードを修正にセットする
     $('#mode').val('update');
@@ -48,9 +51,9 @@ $(function() {
       $('#sir_cd').val($('#sir_' + id).text());
       $('#sir_name').val($('#sirName_' + id).text());
       $('select[name="item_cd"]').val($('#itemcd_' + id).text());
-      $('#jyodai').val($('#jtanka_' + id).text());
-      $('#gedai').val($('#gtanka_' + id).text());
-      $('#siire').val($('#stanka_' + id).text());
+      $('#jyodai').val(jyodai);
+      $('#gedai').val(gedai);
+      $('#siire').val(siire);
       $(':radio[name="lease"]').val($('#lease_' + id).text());
     })
   });
